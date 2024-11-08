@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .menu-item-info {
+            flex: 1;
+        }
+        .menu-item-name {
+            font-size: 1.5em;
+            color: #333;
+            margin: 0;
+        }
+        .menu-item-price {
+            font-size: 1.2em;
+            color: #28a745;
+        }
+        .menu-item-description {
+            font-size: 1em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .order-form {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .order-form input {
+            padding: 10px;
+            font-size: 1.1em;
+            margin-top: 10px;
+            width: 200px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .order-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .order-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Our Bakery Menu</h1>
+
+        <form action="{{ url_for('checkout') }}" method="POST">
+            <div class="menu-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Fresh_butter_croissant.jpg" alt="Croissant">
+                <div class="menu-item-info">
+                    <h3 class="menu-item-name">Croissant</h3>
+                    <p class="menu-item-price">$3.50</p>
+                    <p class="menu-item-description">A buttery, flaky classic French pastry that pairs perfectly with your morning coffee.</p>
+                    <input type="checkbox" name="item_ids" value="1"> Add to cart
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Chocolate_cake_%28cropped%29.jpg" alt="Chocolate Cake">
+                <div class="menu-item-info">
+                    <h3 class="menu-item-name">Chocolate Cake</h3>
+                    <p class="menu-item-price">$5.00</p>
+                    <p class="menu-item-description">Rich, decadent chocolate cake with a smooth frosting.</p>
+                    <input type="checkbox" name="item_ids" value="2"> Add to cart
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Blueberry_muffins.jpg" alt="Blueberry Muffin">
+                <div class="menu-item-info">
+                    <h3 class="menu-item-name">Blueberry Muffin</h3>
+                    <p class="menu-item-price">$2.50</p>
+                    <p class="menu-item-description">Soft and fluffy muffin with fresh, juicy blueberries.</p>
+                    <input type="checkbox" name="item_ids" value="3"> Add to cart
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Crusty_sourdough_bread.jpg" alt="Sourdough Bread">
+                <div class="menu-item-info">
+                    <h3 class="menu-item-name">Sourdough Bread</h3>
+                    <p class="menu-item-price">$4.00</p>
+                    <p class="menu-item-description">A tangy and rustic bread with a crispy crust and soft interior.</p>
+                    <input type="checkbox" name="item_ids" value="4"> Add to cart
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Cinnamon_roll_-_Cinnamon_Roll_%28cropped%29.jpg" alt="Cinnamon Roll">
+                <div class="menu-item-info">
+                    <h3 class="menu-item-name">Cinnamon Roll</h3>
+                    <p class="menu-item-price">$3.00</p>
+                    <p class="menu-item-description">Sweet, spiced dough rolled up with a delicious cinnamon filling and topped with icing.</p>
+                    <input type="checkbox" name="item_ids" value="5"> Add to cart
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Apple_pie_with_strudel.jpg" alt="Apple Pie">
+                <div class="menu-item-info">
+                    <h3 class="menu-item-name">Apple Pie</h3>
+                    <p class="menu-item-price">$6.00</p>
+                    <p class="menu-item-description">A classic homemade apple pie with a flaky crust and spiced apple filling.</p>
+                    <input type="checkbox" name="item_ids" value="6"> Add to cart
+                </div>
+            </div>
+
+            <!-- User name and checkout button -->
+            <div class="order-form">
+                <input type="text" name="username" placeholder="Your Name" required>
+                <button type="submit">Proceed to Checkout</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

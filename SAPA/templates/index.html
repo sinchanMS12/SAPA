@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SAPA Bakery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc; /* Soft light background color */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 30px 0;
+            background-color: #fff; /* White background for the content */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .highlight-box {
+            width: 30%;
+            padding: 20px;
+            background-color: #ffebcd; /* Light tan color for the box */
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .highlight-box h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: block;
+            margin: 40px auto;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        .about-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background-color: #ff6600; /* Orange color for About Us */
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .about-button:hover {
+            background-color: #e65c00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 0 0 10px 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .highlight-box {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .highlight-box {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to SAPA Bakery</h1>
+        <p class="intro-text">At SAPA, we take pride in the artisan craft of sourdough breads and fine pastries, using the finest ingredients and time-honored techniques to create baked goods that are full of flavor and love.</p>
+
+        <!-- Bakery Highlights Section -->
+        <div class="highlights">
+            <div class="highlight-box">
+                <h2>Our Sourdough</h2>
+                <p>We specialize in naturally leavened sourdough breads, made with the best Indian flours and our own sourdough culture, giving each loaf a unique flavor.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h2>Fresh Pastries</h2>
+                <p>Our selection of hand-crafted pastries, from flaky croissants to delicious cinnamon rolls, are baked fresh daily and sure to delight.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h2>Handmade with Love</h2>
+                <p>Every loaf, every pastry is shaped by hand with care and patience, ensuring that you receive the highest quality baked goods.</p>
+            </div>
+        </div>
+
+        <!-- About Us Button -->
+        <a href="{{ url_for('about') }}" class="about-button">Learn More About Us</a>
+
+        <!-- Call to Action Section -->
+        <a href="{{ url_for('menu') }}" class="cta-button">Browse Our Menu</a>
+
+        <a href="{{ url_for('contact') }}" class="cta-button">Visit Us & Get in Touch</a>
+    </div>
+
+    <footer>
+        <p>© 2024 SAPA Bakery | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>

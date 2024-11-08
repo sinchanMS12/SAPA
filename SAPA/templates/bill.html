@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAPA Bakery - Order Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff7e6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #d2691e;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .bill-container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+        }
+        .bill-details {
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .bill-details p {
+            margin: 10px 0;
+        }
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .item-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+        .total-price {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #d2691e;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SAPA Bakery Order Bill</h1>
+    <div class="bill-container">
+        <div class="bill-details">
+            <p><strong>Name:</strong> {{ order.username }}</p>
+            <p><strong>Items Ordered:</strong></p>
+            <ul class="item-list">
+                {% for item in order.items %}
+                    <li>{{ item.name }} - ${{ item.price }}</li>
+                {% endfor %}
+            </ul>
+            <p class="total-price">Total Price: ${{ order.total_price }}</p>
+        </div>
+    </div>
+</body>
+</html>

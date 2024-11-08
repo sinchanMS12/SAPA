@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAPA Bakery - Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff7e6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #d2691e;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .checkout-container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .item-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+        label {
+            font-size: 1em;
+        }
+        .username-field, .submit-button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #d2691e;
+        }
+        .submit-button {
+            background-color: #d2691e;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #c15715;
+        }
+    </style>
+</head>
+<body>
+    <h1>SAPA Bakery Checkout</h1>
+    <div class="checkout-container">
+        <form action="{{ url_for('checkout') }}" method="POST">
+            <ul class="item-list">
+                {% for item in items %}
+                    <li>
+                        <label>
+                            <input type="checkbox" name="item_ids" value="{{ item.id }}">
+                            {{ item.name }} - ${{ item.price }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+            <input type="text" name="username" class="username-field" placeholder="Your Name" required>
+            <button type="submit" class="submit-button">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>
