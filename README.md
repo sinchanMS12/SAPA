@@ -1,2 +1,0 @@
-# SAPA
-Bakery Application
